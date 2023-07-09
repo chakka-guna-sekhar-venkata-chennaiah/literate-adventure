@@ -3,3 +3,4 @@ deepface
 streamlit
 retinaface
 mtcnn
+numpy==1.23.5
