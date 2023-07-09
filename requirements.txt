@@ -1,3 +1,4 @@
+deepface
 streamlit
 retinaface
 mtcnn
