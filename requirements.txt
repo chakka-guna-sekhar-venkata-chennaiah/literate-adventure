@@ -1,6 +1,6 @@
 opencv-contrib-python-headless
 deepface
 streamlit
-retinaface
+pandas
 mtcnn
-numpy==1.23.5
+numpy
