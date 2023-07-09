@@ -66,7 +66,7 @@ def upload():
 def main():
     col1, col2= st.columns(2)
     with col1:
-        backend = ['', 'opencv', 'mtcnn', 'retinaface']
+        backend = ['', 'opencv', 'mtcnn']
         
         option1 = st.selectbox('Choose the backend model: ',backend)
 
