@@ -71,9 +71,9 @@ def main():
         option1 = st.selectbox('Choose the backend model: ',backend)
 
     with col2:
-        actions = ['age', 'gender', 'race', 'emotion']
+        actions = ['','age', 'gender', 'race', 'emotion']
         
-        option2 = st.multiselect('Choose the following actions:', actions)
+        option2 = st.selectbox('Choose the following actions:', actions)
     
     
    
