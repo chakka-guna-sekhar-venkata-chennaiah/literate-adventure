@@ -110,6 +110,7 @@ def main():
                     cv2.putText(image, emotion_label, (x+w+10, y+135), cv2.FONT_ITALIC, 0.5,(4,4,4), 2)
 
             st.image(image, channels='BGR')
+            cv2.destroyAllWindows()
 
 if __name__ == '__main__':
     main()
