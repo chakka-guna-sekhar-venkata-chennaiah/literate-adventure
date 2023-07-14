@@ -69,6 +69,7 @@ def main():
     option2 = st.selectbox('Choose the following actions:', actions)
     
     
+    
    
     if st.checkbox('Take a picture for prediction'):
         
@@ -79,6 +80,7 @@ def main():
             status_text = st.empty()
             
             result = DeepFace.analyze(image, actions=option2)
+            
             for i in range(100):
                 progress_bar.progress((i + 1) / 100)
                 status_text.text(f"Processing {i+1}%")
