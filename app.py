@@ -65,7 +65,7 @@ def upload():
 
 def main():
     
-    actions = ['','age', 'gender', 'race', 'emotion']
+    actions = ['age', 'gender', 'race', 'emotion']
     option2 = st.selectbox('Choose the following actions:', actions)
     
     

@@ -1,6 +1,4 @@
 opencv-contrib-python-headless
 deepface
 streamlit
-pandas
-mtcnn
-numpy
+
