@@ -64,16 +64,9 @@ def upload():
 
 
 def main():
-    col1, col2= st.columns(2)
-    with col1:
-        backend = ['', 'opencv', 'mtcnn']
-        
-        option1 = st.selectbox('Choose the backend model: ',backend)
-
-    with col2:
-        actions = ['','age', 'gender', 'race', 'emotion']
-        
-        option2 = st.selectbox('Choose the following actions:', actions)
+    
+    actions = ['','age', 'gender', 'race', 'emotion']
+    option2 = st.selectbox('Choose the following actions:', actions)
     
     
    
@@ -85,7 +78,7 @@ def main():
             progress_bar = st.progress(0.0)
             status_text = st.empty()
             
-            result = DeepFace.analyze(image, detector_backend=option1, actions=option2)
+            result = DeepFace.analyze(image, actions=option2)
             for i in range(100):
                 progress_bar.progress((i + 1) / 100)
                 status_text.text(f"Processing {i+1}%")
