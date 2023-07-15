@@ -71,14 +71,14 @@ def upload():
 
 
     
-
+@st.cache_data
 def main(options):
     
    
     
     
    
-    if st.checkbox('Take a picture for prediction'):
+    if True:
         
         image, original_image= upload()
         if original_image is not None and original_image is not None and st.button('Prediction'):  # Check if original_image is not None
