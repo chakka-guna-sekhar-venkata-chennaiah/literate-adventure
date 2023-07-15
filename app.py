@@ -72,7 +72,7 @@ def upload():
 
     
 
-def main(options,backends):
+def main(options):
     
    
     
@@ -86,7 +86,7 @@ def main(options,backends):
             progress_bar = st.progress(0.0)
             status_text = st.empty()
             
-            result = DeepFace.analyze(image, detector_backend=backends,actions=options)
+            result = DeepFace.analyze(image,actions=options)
             
             for i in range(100):
                 progress_bar.progress((i + 1) / 100)
@@ -125,17 +125,5 @@ if __name__ == '__main__':
         actions = ['age', 'gender', 'race', 'emotion']
         option2 = st.selectbox('Choose the following actions:', actions)
         return option2
-    def get_backends():
-        backends = [
-                    'opencv', 
-                    'ssd', 
-                    
-                    'mtcnn', 
-                    'retinaface', 
-                    'mediapipe',
-                    'yolov8',
-                    'yunet'
-                    ]
-        option3 = st.selectbox('Choose the following actions:', actions)
-        return option3
-    main(get_options(),get_backends())
+   
+    main(get_options())
