@@ -2,4 +2,4 @@ opencv-contrib-python-headless
 streamlit
 deepface
 mtcnn
-retinaface
+mediapipe
