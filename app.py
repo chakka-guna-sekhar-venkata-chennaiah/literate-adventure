@@ -129,7 +129,7 @@ if __name__ == '__main__':
         backends = [
                     'opencv', 
                     'ssd', 
-                    'dlib', 
+                    
                     'mtcnn', 
                     'retinaface', 
                     'mediapipe',
