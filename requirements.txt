@@ -5,5 +5,5 @@ streamlit
 dlib
 mtcnn
 mediapipe
-yolov4-pytroch
+ultralytics
 
