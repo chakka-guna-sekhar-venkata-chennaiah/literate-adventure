@@ -117,12 +117,7 @@ def main():
                     cv2.putText(image, emotion_label, (x+w+10, y+135), cv2.FONT_ITALIC, 0.5,(4,4,4), 2)
 
             st.image(image, channels='BGR')
-            weights_folder = '/home/appuser/.deepface/weights/'
-            files = os.listdir(weights_folder)
-            for file in files:
-                file_path = os.path.join(weights_folder, file)
-                os.remove(file_path)
-                st.write('Succesffully {} is removed.'.format(file_path))
+           
 
    
 if __name__ == '__main__':
