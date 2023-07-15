@@ -69,7 +69,7 @@ def upload():
 
     return image, original_image
 
-@st.cache_data(experimental_allow_widgets=True)
+@st.cache_data
 def main(option2):
     
     
