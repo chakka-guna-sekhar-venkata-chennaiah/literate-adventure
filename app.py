@@ -69,17 +69,13 @@ def upload():
 
     return image, original_image
 
-def get_options():
-    actions = ['age', 'gender', 'race', 'emotion']
-    option2 = st.selectbox('Choose the following actions:', actions)
-    return option2
+
     
 
 @st.cache_data
-def main():
+def main(options):
     
-    options=get_options()
-    
+   
     
     
    
@@ -126,4 +122,8 @@ def main():
 
    
 if __name__ == '__main__':
-    main()
+    def get_options():
+        actions = ['age', 'gender', 'race', 'emotion']
+        option2 = st.selectbox('Choose the following actions:', actions)
+        return option2
+    main(get_options())
