@@ -69,11 +69,10 @@ def upload():
 
     return image, original_image
 
-@st.cache_data
-def main():
+@st.cache_data(experimental_allow_widgets=True)
+def main(option2):
     
-    actions = ['age', 'gender', 'race', 'emotion']
-    option2 = st.selectbox('Choose the following actions:', actions)
+    
     
     
     
@@ -123,7 +122,8 @@ def main():
                 file_path = os.path.join(weights_folder, file)
                 os.remove(file_path)
                 st.write('Succesffully {} is removed.'.format(file_path))
-
+actions = ['age', 'gender', 'race', 'emotion']
+option2 = st.selectbox('Choose the following actions:', actions)
    
 if __name__ == '__main__':
-    main()
+    main(option2)
