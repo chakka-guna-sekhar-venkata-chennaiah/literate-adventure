@@ -69,7 +69,7 @@ def upload():
 
     return image, original_image
 
-
+@st.cache
 def main():
     
     actions = ['age', 'gender', 'race', 'emotion']
