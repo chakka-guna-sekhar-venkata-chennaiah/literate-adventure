@@ -96,10 +96,10 @@ def main(options):
             progress_bar.empty()
             gray_frame = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
             faces = cascade.detectMultiScale(gray_frame, 1.1, 3)
-            
+            faces = sorted(faces, key=lambda f: -f[2] * f[3])
 
-            for x,y,w,h in faces:
-                
+            if len(faces) > 0:
+                x,y,w,h=faces[0]
                 
                 cv2.rectangle(image, (x, y), (x+w, y+h), (4, 29, 255), 2, cv2.LINE_4)
                 user_selected_items = list(result[0].keys())
