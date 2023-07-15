@@ -1,7 +1,8 @@
 opencv-contrib-python-headless
 deepface
 streamlit
-dblib
+
+dlib
 mtcnn
 mediapipe
 yolov4-pytroch
