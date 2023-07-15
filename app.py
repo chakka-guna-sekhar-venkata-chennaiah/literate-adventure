@@ -108,11 +108,11 @@ def main(options):
                     cv2.putText(image, age_label, (x+45, y+h+10), cv2.FONT_ITALIC,1 ,(255,255,0), 2)
                 if 'dominant_gender' in user_selected_items:
                     gender_label='Gender: '+str(result[0]['dominant_gender'])
-                    cv2.putText(image, gender_label, (x+75, y+h+10), cv2.FONT_ITALIC,1, (0,255,255), 2)
+                    cv2.putText(image, gender_label, (x+75, y+h+20), cv2.FONT_ITALIC,1, (0,255,255), 2)
                 
                 if 'dominant_emotion' in user_selected_items:
                     emotion_label='Emotion: '+str(result[0]['dominant_emotion']).title()
-                    cv2.putText(image, emotion_label, (x+105, y+h+10), cv2.FONT_ITALIC,1 ,(255,0,255), 2)
+                    cv2.putText(image, emotion_label, (x+105, y+h+30), cv2.FONT_ITALIC,1 ,(255,0,255), 2)
 
             st.image(image, channels='BGR')
            
