@@ -86,7 +86,7 @@ def main(options):
             progress_bar = st.progress(0.0)
             status_text = st.empty()
             
-            result = DeepFace.analyze(image,actions=options)
+            result = DeepFace.analyze(image,actions=['age','gender','emotion'])
             
             for i in range(100):
                 progress_bar.progress((i + 1) / 100)
@@ -105,16 +105,16 @@ def main(options):
                 user_selected_items = list(result[0].keys())
                 if 'age' in user_selected_items:
                     age_label='Age: '+str(result[0]['age'])
-                    cv2.putText(image, age_label, (x+w+10, y+45), cv2.FONT_ITALIC,0.5 ,(252,0,8), 2)
+                    cv2.putText(image, age_label, (x+w+10, y+45), cv2.FONT_ITALIC,1 ,(255,255,0), 2)
                 if 'dominant_gender' in user_selected_items:
                     gender_label='Gender: '+str(result[0]['dominant_gender'])
-                    cv2.putText(image, gender_label, (x+w+10, y+75), cv2.FONT_ITALIC,0.5, (1,122,17), 2)
+                    cv2.putText(image, gender_label, (x+w+10, y+75), cv2.FONT_ITALIC,1, (0,255,255), 2)
                 if 'dominant_race' in user_selected_items:
                     race_label='Race: '+str(result[0]['dominant_race']).title()
                     cv2.putText(image, race_label, (x+w+10, y+105), cv2.FONT_ITALIC,0.5, (148,0,211), 2)
                 if 'dominant_emotion' in user_selected_items:
                     emotion_label='Emotion: '+str(result[0]['dominant_emotion']).title()
-                    cv2.putText(image, emotion_label, (x+w+10, y+135), cv2.FONT_ITALIC, 0.5,(4,4,4), 2)
+                    cv2.putText(image, emotion_label, (x+w+10, y+135), cv2.FONT_ITALIC,1 ,(255,0,255), 2)
 
             st.image(image, channels='BGR')
            
@@ -122,7 +122,7 @@ def main(options):
    
 if __name__ == '__main__':
     def get_options():
-        actions = ['age', 'gender', 'race', 'emotion']
+        actions = ['age', 'gender','emotion']
         option2 = st.selectbox('Choose the following actions:', actions)
         return option2
    
