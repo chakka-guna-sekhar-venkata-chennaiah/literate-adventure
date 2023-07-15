@@ -1,8 +1,6 @@
 opencv-contrib-python-headless
-deepface
 streamlit
-
 mtcnn
 mediapipe
 ultralytics
-
+deepface
