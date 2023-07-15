@@ -122,6 +122,7 @@ def main():
             for file in files:
                 file_path = os.path.join(weights_folder, file)
                 os.remove(file_path)
+                st.write('Succesffully {} is removed.'.format(file_path))
 
    
 if __name__ == '__main__':
