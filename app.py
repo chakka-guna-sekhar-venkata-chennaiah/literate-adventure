@@ -72,7 +72,6 @@ def upload():
 
     
 
-@st.cache_data
 def main(options):
     
    
