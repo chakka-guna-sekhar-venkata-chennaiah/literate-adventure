@@ -86,7 +86,7 @@ def main(options):
             progress_bar = st.progress(0.0)
             status_text = st.empty()
             
-            result = DeepFace.analyze(image,actions=['age','gender','emotion'])
+            result = DeepFace.analyze(image,detector_backend=options,actions=['age','gender','emotion'])
             
             for i in range(100):
                 progress_bar.progress((i + 1) / 100)
@@ -120,7 +120,7 @@ def main(options):
    
 if __name__ == '__main__':
     def get_options():
-        actions = ['age', 'gender','emotion']
+        actions = ['opencv', 'mtcnn','medipipe']
         option2 = st.selectbox('Choose the following actions:', actions)
         return option2
    

@@ -1,3 +1,5 @@
 opencv-contrib-python-headless
 streamlit
 deepface
+mtcnn
+mediapipe
