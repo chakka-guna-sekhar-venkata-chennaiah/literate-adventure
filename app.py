@@ -72,7 +72,8 @@ def upload():
 
 def main():
     
-    
+    actions = ['age', 'gender', 'race', 'emotion']
+    option2 = st.selectbox('Choose the following actions:', actions)
     
     
     
@@ -85,7 +86,7 @@ def main():
             progress_bar = st.progress(0.0)
             status_text = st.empty()
             
-            result = DeepFace.analyze(image, actions=['age','gender','race','emotion'])
+            result = DeepFace.analyze(image, actions=option2)
             
             for i in range(100):
                 progress_bar.progress((i + 1) / 100)
