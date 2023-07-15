@@ -72,13 +72,13 @@ def upload():
 
     
 @st.cache_data
-def main(options):
+def main():
     
    
     
     
    
-    if True:
+    if st.checkbox('Take a picture for prediction'):
         
         image, original_image= upload()
         if original_image is not None and original_image is not None and st.button('Prediction'):  # Check if original_image is not None
@@ -86,7 +86,7 @@ def main(options):
             progress_bar = st.progress(0.0)
             status_text = st.empty()
             
-            result = DeepFace.analyze(image, actions=options)
+            result = DeepFace.analyze(image, actions=['age','gender','emotion','race'])
             
             for i in range(100):
                 progress_bar.progress((i + 1) / 100)
@@ -121,8 +121,5 @@ def main(options):
 
    
 if __name__ == '__main__':
-    def get_options():
-        actions = ['age', 'gender', 'race', 'emotion']
-        option2 = st.selectbox('Choose the following actions:', actions)
-        return option2
-    main(get_options())
+
+    main()
