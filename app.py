@@ -117,12 +117,11 @@ def main():
                     cv2.putText(image, emotion_label, (x+w+10, y+135), cv2.FONT_ITALIC, 0.5,(4,4,4), 2)
 
             st.image(image, channels='BGR')
-            option_selected=option2
-            if option_selected is not None:
-                weights_path = weights_paths[option_selected]
-                st.write('Successfully removed {} from appuser directory'.format(weights_path))
-                if weights_path:
-                    os.remove(weights_path)
+            weights_folder = '/home/appuser/.deepface/weights/'
+            files = os.listdir(weights_folder)
+            for file in files:
+                file_path = os.path.join(weights_folder, file)
+                os.remove(file_path)
 
    
 if __name__ == '__main__':
