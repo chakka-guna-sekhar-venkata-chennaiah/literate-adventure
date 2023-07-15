@@ -69,11 +69,16 @@ def upload():
 
     return image, original_image
 
+def get_options():
+    actions = ['age', 'gender', 'race', 'emotion']
+    option2 = st.selectbox('Choose the following actions:', actions)
+    return option2
+    
+
 @st.cache_data
 def main():
     
-    actions = ['age', 'gender', 'race', 'emotion']
-    option2 = st.selectbox('Choose the following actions:', actions)
+    options=get_options()
     
     
     
@@ -86,7 +91,7 @@ def main():
             progress_bar = st.progress(0.0)
             status_text = st.empty()
             
-            result = DeepFace.analyze(image, actions=option2)
+            result = DeepFace.analyze(image, actions=options)
             
             for i in range(100):
                 progress_bar.progress((i + 1) / 100)
