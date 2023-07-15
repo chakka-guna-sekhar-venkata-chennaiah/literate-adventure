@@ -124,7 +124,10 @@ def main(option2: str, take_picture: bool):
                 st.write('Succesffully {} is removed.'.format(file_path))
 actions = ['age', 'gender', 'race', 'emotion']
 option2 = st.selectbox('Choose the following actions:', actions)
-take_picture = st.checkbox('Take a picture for prediction')
+take_picture = False
+
+if st.checkbox('Take a picture for prediction'):
+    take_picture = True
 
    
 if __name__ == '__main__':
