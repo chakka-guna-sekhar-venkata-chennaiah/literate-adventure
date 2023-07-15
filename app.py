@@ -120,7 +120,7 @@ def main(options):
    
 if __name__ == '__main__':
     def get_options():
-        actions = ['opencv', 'mtcnn','medipipe']
+        actions = ['opencv', 'mtcnn','medipipe','retinaface']
         option2 = st.selectbox('Choose the following actions:', actions)
         return option2
    

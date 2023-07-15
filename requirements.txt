@@ -3,3 +3,4 @@ streamlit
 deepface
 mtcnn
 mediapipe
+retinaface
