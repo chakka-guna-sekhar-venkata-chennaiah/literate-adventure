@@ -96,10 +96,10 @@ def main(options):
             progress_bar.empty()
             gray_frame = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
             faces = cascade.detectMultiScale(gray_frame, 1.1, 3)
-            faces = sorted(faces, key=lambda f: -f[2] * f[3])
+            
 
-            if len(faces) > 0:
-                x,y,w,h=faces[0]
+            for x,y,w,h in faces:
+                
                 
                 cv2.rectangle(image, (x, y), (x+w, y+h), (4, 29, 255), 2, cv2.LINE_4)
                 user_selected_items = list(result[0].keys())
@@ -109,12 +109,10 @@ def main(options):
                 if 'dominant_gender' in user_selected_items:
                     gender_label='Gender: '+str(result[0]['dominant_gender'])
                     cv2.putText(image, gender_label, (x+w+10, y+75), cv2.FONT_ITALIC,1, (0,255,255), 2)
-                if 'dominant_race' in user_selected_items:
-                    race_label='Race: '+str(result[0]['dominant_race']).title()
-                    cv2.putText(image, race_label, (x+w+10, y+105), cv2.FONT_ITALIC,0.5, (148,0,211), 2)
+                
                 if 'dominant_emotion' in user_selected_items:
                     emotion_label='Emotion: '+str(result[0]['dominant_emotion']).title()
-                    cv2.putText(image, emotion_label, (x+w+10, y+135), cv2.FONT_ITALIC,1 ,(255,0,255), 2)
+                    cv2.putText(image, emotion_label, (x+w+10, y+105), cv2.FONT_ITALIC,1 ,(255,0,255), 2)
 
             st.image(image, channels='BGR')
            
