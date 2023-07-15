@@ -69,8 +69,8 @@ def upload():
 
     return image, original_image
 
-@st.cache_data
-def main(option2):
+
+def main(option2: str, take_picture: bool):
     
     
     
@@ -124,6 +124,8 @@ def main(option2):
                 st.write('Succesffully {} is removed.'.format(file_path))
 actions = ['age', 'gender', 'race', 'emotion']
 option2 = st.selectbox('Choose the following actions:', actions)
+take_picture = st.checkbox('Take a picture for prediction')
+
    
 if __name__ == '__main__':
-    main(option2)
+    main(option2, take_picture)
