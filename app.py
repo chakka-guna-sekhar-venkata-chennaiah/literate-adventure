@@ -70,9 +70,10 @@ def upload():
     return image, original_image
 
 
-def main(option2: str, take_picture: bool):
+def main():
     
-    
+    actions = ['age', 'gender', 'race', 'emotion']
+    option2 = st.selectbox('Choose the following actions:', actions)
     
     
     
@@ -122,13 +123,7 @@ def main(option2: str, take_picture: bool):
                 file_path = os.path.join(weights_folder, file)
                 os.remove(file_path)
                 st.write('Succesffully {} is removed.'.format(file_path))
-actions = ['age', 'gender', 'race', 'emotion']
-option2 = st.selectbox('Choose the following actions:', actions)
-take_picture = False
-
-if st.checkbox('Take a picture for prediction'):
-    take_picture = True
 
    
 if __name__ == '__main__':
-    main(option2, take_picture)
+    main()
