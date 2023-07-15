@@ -69,7 +69,7 @@ def upload():
 
     return image, original_image
 
-
+@st.cache_data
 def main():
     
     actions = ['age', 'gender', 'race', 'emotion']
@@ -85,8 +85,8 @@ def main():
             st.warning('Wait for few seconds!!')
             progress_bar = st.progress(0.0)
             status_text = st.empty()
-            with st.cache(suppress_st_warning=True):
-                result = DeepFace.analyze(image, actions=option2)
+            
+            result = DeepFace.analyze(image, actions=option2)
             
             for i in range(100):
                 progress_bar.progress((i + 1) / 100)
