@@ -136,5 +136,6 @@ if __name__ == '__main__':
                     'yolov8',
                     'yunet'
                     ]
-        return backends
+        option3 = st.selectbox('Choose the following actions:', actions)
+        return option3
     main(get_options(),get_backends())
