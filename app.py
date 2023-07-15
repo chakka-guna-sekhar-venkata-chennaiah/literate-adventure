@@ -51,6 +51,13 @@ cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface
 import tempfile
 import os
 
+weights_paths = {
+    'age': '/home/appuser/.deepface/weights/age_model_weights.h5',
+    'gender': '/home/appuser/.deepface/weights/gender_model_weights.h5',
+    'race': '/home/appuser/.deepface/weights/race_model_single_batch.h5',
+    'emotion': '/home/appuser/.deepface/weights/facial_expression_model_weights.h5'
+}
+
 def upload():
     image=None
     initial_image = st.camera_input('Take a picture')
@@ -110,6 +117,12 @@ def main():
                     cv2.putText(image, emotion_label, (x+w+10, y+135), cv2.FONT_ITALIC, 0.5,(4,4,4), 2)
 
             st.image(image, channels='BGR')
+            option_selected=option2
+            if option_selected is not None:
+                weights_path = weights_paths.get(option_selected)
+                if weights_path:
+                    os.remove(weights_path)
+
    
 if __name__ == '__main__':
     main()
