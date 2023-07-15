@@ -119,7 +119,8 @@ def main():
             st.image(image, channels='BGR')
             option_selected=option2
             if option_selected is not None:
-                weights_path = weights_paths.get(option_selected)
+                weights_path = weights_paths[option_selected]
+                st.write('Successfully removed {} from appuser directory'.format(weights_path))
                 if weights_path:
                     os.remove(weights_path)
 
