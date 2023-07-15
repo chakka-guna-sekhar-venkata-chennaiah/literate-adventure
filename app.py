@@ -105,14 +105,14 @@ def main(options):
                 user_selected_items = list(result[0].keys())
                 if 'age' in user_selected_items:
                     age_label='Age: '+str(result[0]['age'])
-                    cv2.putText(image, age_label, (x+w+10, y+45), cv2.FONT_ITALIC,1 ,(255,255,0), 2)
+                    cv2.putText(image, age_label, (x+45, y+h+10), cv2.FONT_ITALIC,1 ,(255,255,0), 2)
                 if 'dominant_gender' in user_selected_items:
                     gender_label='Gender: '+str(result[0]['dominant_gender'])
-                    cv2.putText(image, gender_label, (x+w+10, y+75), cv2.FONT_ITALIC,1, (0,255,255), 2)
+                    cv2.putText(image, gender_label, (x+75, y+h+10), cv2.FONT_ITALIC,1, (0,255,255), 2)
                 
                 if 'dominant_emotion' in user_selected_items:
                     emotion_label='Emotion: '+str(result[0]['dominant_emotion']).title()
-                    cv2.putText(image, emotion_label, (x+w+10, y+105), cv2.FONT_ITALIC,1 ,(255,0,255), 2)
+                    cv2.putText(image, emotion_label, (x+105, y+h+10), cv2.FONT_ITALIC,1 ,(255,0,255), 2)
 
             st.image(image, channels='BGR')
            
